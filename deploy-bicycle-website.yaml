@@ -27,7 +27,7 @@
 
     - name: unzip the zip folder
       ansible.builtin.unarchive:
-        src: /var/www/html/Speed Free Cycle.zip
+        src: /var/www/html/Speed\ Free\ Cycle.zip
         dest: /var/www/html
         remote_src: yes
 
