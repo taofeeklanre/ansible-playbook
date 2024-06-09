@@ -22,14 +22,14 @@
 
     - name: download web files from github
       get_url:
-      url: https://github.com/taofeeklanre/static-website-repos/archive/refs/heads/main.zip
-      dest: /var/www/html/main.zip
+        url: https://github.com/taofeeklanre/static-website-repos/archive/refs/heads/main.zip
+        dest: /var/www/html/main.zip
 
     - name: unzip the zip folder
       ansible.builtin.unarchive:
-      src: /var/www/html/main.zip
-      dest: /var/www/html
-      remote_src: yes
+       src: /var/www/html/main.zip
+       dest: /var/www/html
+       remote_src: yes
 
 
     - name: copy webfiles from the static-website-repos directory to the html directory
