@@ -22,16 +22,22 @@
 
     - name: download web files from github
       get_url:
-        url: https://github.com/taofeeklanre/static-website-Repository/raw/main/Speed%20Free%20Cycle.zip
+        url: https://github.com/taofeeklanre/static-website-repos/archive/refs/heads/main.zip
         dest: /var/www/html/
 
     - name: unzip the zip folder
       ansible.builtin.unarchive:
-        src: /var/www/html/Speed Free Cycle.zip
+        src: /var/www/html/main.zip
         dest: /var/www/html
         remote_src: yes
 
-    - name: copy webfiles from the speed directory to the html directory
+    - name: copy webfiles from the static-website-repos directory to the html directory
+      copy: 
+        src: /var/www/html/static-website-repos-main/
+        dest: /var/www/html
+        remote_src: yes
+
+    - name: copy webfiles from the static-website-repos directory to the html directory
       copy: 
         src: /var/www/html/speed/
         dest: /var/www/html
@@ -42,9 +48,9 @@
         path: /var/www/html/speed
         state: absent
 
-    - name: remove the Speed Free Cycle.zip folder
+    - name: remove the Speed main.zip folder
       file: 
-        path: /var/www/html/Speed Free Cycle.zip
+        path: /var/www/html/main.zip
         state: absent
 
     - name: start apache server, if not started
