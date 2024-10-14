@@ -115,6 +115,9 @@ Allocate Elastic IP addresses.
 
 Create NAT Gateways in public subnets.
 
+##### Nat-Gateway Reference Architecture.
+![Architectural Drawing](https://github.com/taofeeklanre/ansible-playbook/blob/main/Nat-Gateway%20Reference%20Architecture.jpg?raw=true)
+
 Update route tables to route internet traffic through NAT Gateways.
 
 3. #### Create Security Groups
@@ -124,6 +127,37 @@ Objective: Define firewall rules for your instances.
 Actions:
 
 Create security groups for the Bastion Host, Ansible Server, and Web Servers.
+
+With reference to our security group reference architecture, we are going to create three different Security Groups.
+Recall that our security groups act like a firewall that control the inbound and outbound network traffic into our ec2 instances.
+
+Security groups work or operate at instance level. These Security Groups are as follows:
+
+1. Application Load Balancer security group (ALB S.G)
+
+Port= 80 and 443 Source: 0.0.0.0/0
+
+2. Bastion Host Security Group (BASTION HOST S.G)
+
+Port= 22 Source: My IP Address
+
+3. Ansible Security Group (ANSIBLE S.G)
+
+Port= 22 Source: Bastion Host Security Group
+
+4. Webserver Security Group (Webserver S.G)
+
+Port= 22, Source: Ansible Security Group
+
+Port= 80 and 443 Source: ALB Security Group
+
+These are all the security groups that we will create for this project. Now, let dive into into it right now!
+
+1. Application Load Balancer security group (ALB S.G)
+
+Port= 80 and 443 Source: 0.0.0.0/0
+
+
 
 Configure inbound and outbound rules as per project requirements.
 
