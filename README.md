@@ -327,56 +327,70 @@ Terminate EC2 instances, delete security groups, and remove other AWS resources 
 Cleanup
 To avoid incurring charges for the AWS resources used in this project, follow these cleanup steps:
 
-Terminate EC2 Instances
+1. Terminate EC2 Instances
 
 Stop and terminate all EC2 instances created for the Bastion Host, Ansible Server, and Web Servers.
-Delete NAT Gateways
+
+2. Delete NAT Gateways
 
 Remove NAT Gateways to stop incurring costs.
-Delete Security Groups
+
+3. Delete Security Groups
 
 Remove all security groups associated with the project.
-Delete VPC and Subnets
+
+4. Delete VPC and Subnets
 
 Delete the VPC along with its public and private subnets.
-Remove Load Balancer and SSL Certificates
+
+5. Remove Load Balancer and SSL Certificates
 
 Delete the Application Load Balancer and associated SSL certificates from AWS Certificate Manager.
-Delete Route 53 Domain and Records
+
+6. Delete Route 53 Domain and Records
 
 If no longer needed, delete your domain registration and DNS records in Route 53.
-Delete GitHub Repositories
 
-Remove the GitHub repository if it’s no longer needed or keep it for future reference.
-Delete AMI
+7.  Keep it for future reference.
+
+8. Delete AMI
 
 Remove the AMI of the Ansible Server if it's no longer required.
-Contributing
+
+### Contributing
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
 
-How to Contribute
-Fork the Repository
+#### How to Contribute
 
-Click the "Fork" button at the top right of this repository's page on GitHub.
-Create a New Branch
+1. Fork the Repository
 
-git checkout -b feature/YourFeature
-Commit Your Changes
+ Click the "Fork" button at the top right of this repository's page on GitHub.
+
+2. Create a New Branch
+
+ git checkout -b feature/YourFeature
+
+3. Commit Your Changes
 
 git commit -m 'Add some feature'
-Push to the Branch
+
+4. Push to the Branch
 
 git push origin feature/YourFeature
-Open a Pull Request
+
+5. Open a Pull Request
 
 Navigate to the original repository and open a pull request from your forked repository.
-License
-This project is licensed under the MIT License.
 
-Contact
+#### Contact
 For any questions or inquiries, please contact:
 
-Your Name
-Email: your.email@example.com
-GitHub: your-github-username
+Taofeek Agboola
+
+Email: taolanre99@gmail.com
+
+GitHub: [My-Github-username](https://github.com/taofeeklanre)
+
+LinkedIn:[My-LindkedIn-User]( inkedin.com/in/taofeek-agboola)
+
 Happy automating! 🚀
